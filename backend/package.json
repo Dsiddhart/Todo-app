@@ -1,0 +1,14 @@
+{
+  "name": "backendtodo",
+  "version": "1.0.0",
+  "description": "todo application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sid",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
