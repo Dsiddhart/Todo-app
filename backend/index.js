@@ -1,5 +1,5 @@
 const express=require('express');
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 const { createTodo }= require('./types');
 const { updateTodo }= require('./types');
 const { Todo } = require('../db');
@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.post("/todo", async function(req,res) {
     const payLoad=req.body;
-    const checkpayLoad= createTodo.safeParse(payload);
+    const checkpayLoad= createTodo.safeParse(payLoad);
     if (!checkpayLoad.success){
         res.status(411).json({
             msg:"you sent the wrong input"
@@ -18,8 +18,8 @@ app.post("/todo", async function(req,res) {
         return;
     }
     await Todo.create({
-        title:payload.title,
-        description:payload.description,
+        title:payLoad.title,
+        description:payLoad.description,
         completed:false
     })
     res.status(200).json({
@@ -48,11 +48,15 @@ app.put("/completed",async function(req,res) {
     await Todo.update({
         _id:req.body.id
     },{
-        completed:true 
+        completed: true 
     })
     res.json({
         msg:"todo updated" 
     })
+    // await Todo.findOneAndUpdate({_id:req.body.id},{completed: true },{new:true})
+    // res.json({
+    //     msg:"updated "
+    // })
 });
 
 

@@ -1,7 +1,7 @@
 const mongoose =require("mongoose");
 
 // connect mongoose
-mongoose.connect('');
+mongoose.connect('mongodb+srv://dsiddharth4295:77hwPxB9e2Db07i9@cluster0.8fsptse.mongodb.net/todo');
 
 // define schema
 /*
@@ -12,7 +12,7 @@ mongoose.connect('');
 
 }
 */
-const TodoSchema = new moongose.Schema({
+const TodoSchema = new mongoose.Schema({
     title:String,
     description:String,
     completed:Boolean
