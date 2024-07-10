@@ -1,7 +1,7 @@
 const mongoose =require("mongoose");
 
 // connect mongoose
-mongoose.connect('mongodb+srv://dsiddharth4295:77hwPxB9e2Db07i9@cluster0.8fsptse.mongodb.net/todo');
+mongoose.connect("mongodb+srv://dsiddharth4295:77hwPxB9e2Db07i9@cluster0.8fsptse.mongodb.net/todo");
 
 // define schema
 /*

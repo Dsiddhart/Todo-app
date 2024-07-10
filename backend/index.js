@@ -4,9 +4,11 @@ const { createTodo }= require('./types');
 const { updateTodo }= require('./types');
 const { Todo } = require('../db');
 const app =express();
+const cors=require('cors');
 
 //Middleware for parsing request bodies
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/todo", async function(req,res) {
     const payLoad=req.body;
